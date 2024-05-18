@@ -1,14 +1,16 @@
 import React from 'react';
-import {Text} from 'ink';
+import Gradient from 'ink-gradient';
+import BigText from 'ink-big-text';
 
-type Props = {
-	name: string | undefined;
-};
-
-export default function App({name = 'Stranger'}: Props) {
-	return (
-		<Text>
-			Hello, <Text color="green">{name}</Text>
-		</Text>
-	);
-}
+ const App = () => (
+	<>
+		<Gradient name="summer">
+			<BigText 
+				text="crypto cli" 
+				align='center' 
+				font='chrome'
+			/>
+		</Gradient>
+	</>
+);
+export default App

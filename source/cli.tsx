@@ -26,4 +26,4 @@ const cli = meow(
 	},
 );
 
-render(<App name={cli.flags.name} />);
+render(React.createElement(App, cli.flags));
