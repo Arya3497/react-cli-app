@@ -1,29 +1,14 @@
 #!/usr/bin/env node
 import React from 'react';
 import {render} from 'ink';
-import meow from 'meow';
 import App from './app.js';
+import cliConfig from './config.js';
 
-const cli = meow(
-	`
-	Usage
-	  $ react-cli-app
+const cli = cliConfig();
 
-	Options
-		--name  Your name
-
-	Examples
-	  $ react-cli-app --name=Jane
-	  Hello, Jane
-`,
-	{
-		importMeta: import.meta,
-		flags: {
-			name: {
-				type: 'string',
-			},
-		},
-	},
-);
-
-render(React.createElement(App, cli.flags));
+render( <App
+    room={cli.flags.room}
+    nickname={cli.flags.nickname}
+    supaBaseKey={cli.flags.supaBaseKey}
+    supaBaseUrl={cli.flags.supaBaseUrl}
+  />);
